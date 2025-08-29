@@ -1,0 +1,38 @@
+{
+    "DockerRun.DisableDockerrc": true,
+    "DockerRun.Containers": [
+        "b8f0cbc0d54f"
+    ],
+    "cSpell.words": [
+        "aplica",
+        "Aquí",
+        "Archivos",
+        "autoincrement",
+        "carpeta",
+        "Cliente",
+        "completo",
+        "Configuración",
+        "crear",
+        "cuid",
+        "Dependencias",
+        "entorno",
+        "Esquema",
+        "estáticos",
+        "Ignora",
+        "imágenes",
+        "inicio",
+        "logomark",
+        "modelo",
+        "nextauth",
+        "opcional",
+        "otros",
+        "Página",
+        "protegida",
+        "registro",
+        "Ruta",
+        "rutas",
+        "sesión",
+        "turbopack",
+        "usuarios"
+    ]
+}

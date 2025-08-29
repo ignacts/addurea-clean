@@ -1,0 +1,33 @@
+addurea-clean/
+├── app/                         # ← Sistema completo de rutas con App Router
+│   ├── api/
+│   │   ├── auth/
+│   │   │   └── [...nextauth]/   # NextAuth: sesión y login
+│   │   │       └── route.ts
+│   │   └── register/            # API para crear usuarios
+│   │       └── route.ts
+│   ├── login/                   # Página de inicio de sesión
+│   │   └── page.tsx
+│   ├── register/                # Página de registro de usuarios
+│   │   └── page.tsx
+│   └── dashboard/               # Ruta protegida con sesión
+│       └── page.tsx
+│
+├── lib/                         # Cliente Prisma (y otros helpers)
+│   └── prisma.ts
+│
+├── prisma/                      # Archivos del ORM Prisma
+│   └── schema.prisma            # Esquema con modelo User
+│
+├── public/                      # Archivos estáticos (favicon, imágenes, etc.)
+│
+├── styles/                      # CSS global o tailwind.css
+│   └── globals.css
+│
+├── .env.local                   # ✅ Variables de entorno (DB + NextAuth)
+├── .gitignore                   # Ignora node_modules, .env, etc.
+├── package.json                 # Dependencias y scripts
+├── tsconfig.json                # Configuración de TypeScript
+├── next.config.js               # Config global de Next.js (opcional)
+├── postcss.config.js            # Config para Tailwind (si aplica)
+└── tailwind.config.ts           # Config de TailwindCSS (si aplica)
