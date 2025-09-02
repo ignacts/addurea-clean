@@ -590,7 +590,7 @@
           "$ref": "#/definitions/permissions"
         },
         "if": {
-          "$comment": "https://help.github.com/en/actions/automating-your-workflow-with-github-actions/workflow-syntax-for-github-actions#jobsjob_idif",
+          "$comment": "https://help.github.com/en/actions/automating-your_workflow-with_github-actions/workflow-syntax-for-github-actions#jobsjob_idif",
           "description": "You can use the if conditional to prevent a job from running unless a condition is met. You can use any supported context and expression to create a conditional.\nExpressions in an if conditional do not require the ${{ }} syntax. For more information, see https://help.github.com/en/articles/contexts-and-expression-syntax-for-github-actions.",
           "type": ["boolean", "number", "string"]
         },
@@ -663,7 +663,7 @@
       "type": "object",
       "properties": {
         "name": {
-          "$comment": "https://help.github.com/en/github/automating-your-workflow-with-github-actions/workflow-syntax-for-github-actions#jobsjob_idname",
+          "$comment": "https://help.github.com/en/github/automating-your_workflow-with_github-actions/workflow-syntax-for-github-actions#jobsjob_idname",
           "description": "The name of the job displayed on GitHub.",
           "type": "string"
         },
@@ -787,7 +787,7 @@
           "default": 360
         },
         "strategy": {
-          "$comment": "https://help.github.com/en/actions/automating-your-workflow-with-github-actions/workflow-syntax-for-github-actions#jobsjob_idstrategy",
+          "$comment": "https://help.github.com/en/actions/automating-your_workflow-with_github-actions/workflow-syntax-for-github-actions#jobsjob_idstrategy",
           "description": "A strategy creates a build matrix for your jobs. You can define different variations of an environment to run each job in.",
           "type": "object",
           "properties": {
