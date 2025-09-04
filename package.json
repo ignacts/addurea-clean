@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@prisma/client": "^5.10.2",
+    "@vercel/speed-insights": "^1.2.0",
     "bcryptjs": "^2.4.3",
     "next": "^14.2.32",
     "next-auth": "^4.24.7",
