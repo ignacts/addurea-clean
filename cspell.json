@@ -1,12 +1,41 @@
 {
     "version": "0.2",
     "ignorePaths": [],
-    "dictionaryDefinitions": [],
-    "dictionaries": [],
+    "dictionaryDefinitions": [
+        {
+            "name": "custom-dictionary",
+            "path": "./.cspell/custom-dictionary.txt",
+            "addWords": true
+        }
+    ],
+    "dictionaries": [
+        "custom-dictionary"
+    ],
     "words": [
+        "Advertencia",
+        "barcos",
+        "barra",
+        "beforeinstallprompt",
         "Cáustica",
+        "certificados",
+        "Chandling",
+        "Conectamos",
+        "contenido",
+        "Cumplimiento",
+        "garantizado",
+        "marinos",
         "Marítima",
+        "mundiales",
+        "navegador",
+        "navegadores",
+        "personaliza",
         "Plataforma",
+        "productos",
+        "proveedores",
+        "puertos",
+        "químicos",
+        "Saltar",
+        "soporte",
         "vercel"
     ],
     "ignoreWords": [],

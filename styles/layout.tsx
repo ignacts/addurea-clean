@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Roboto_Mono } from "next/font/google";
 import "./globals.css";
+import "./noscript.css";
 
 const geistSans = Inter({
   variable: "--font-geist-sans",
@@ -14,24 +15,23 @@ const geistMono = Roboto_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Addurea - Plataforma Global de Productos Químicos Marinos",
+    default: "Addurea - Global Marine Chemical Products Platform",
     template: "%s | Addurea"
   },
-  description: "La plataforma líder mundial para el suministro de AUS40 y Soda Cáustica marina. Conectamos barcos con proveedores certificados en más de 500 puertos mundiales.",
+  description: "The world's leading platform for the supply of AUS40 and marine caustic soda. We connect ships with certified suppliers in over 500 ports worldwide.",
   keywords: [
     "AUS40",
-    "Soda Cáustica", 
-    "productos químicos marinos",
-    "combustibles marinos de bajo azufre",
-    "suministro marítimo",
-    "proveedores marinos certificados",
+    "Marine Caustic Soda", 
+    "marine chemical products",
+    "low sulfur marine fuels",
+    "marine supply",
+    "certified marine suppliers",
     "IMO 2020",
-    "marketplace marítimo",
-    "logística naval",
-    "hidróxido de sodio marino"
+    "maritime marketplace",
+    "naval logistics",
+    "marine sodium hydroxide"
   ],
   authors: [{ name: "Addurea" }],
-  creator: "Addurea",
   publisher: "Addurea",
   formatDetection: {
     email: false,
@@ -54,8 +54,7 @@ export const metadata: Metadata = {
     locale: "es_ES",
     alternateLocale: ["en_US"],
     url: "https://addurea.com",
-    siteName: "Addurea",
-    title: "Addurea - Plataforma Global de Productos Químicos Marinos",
+    title: "Addurea - Global Marine Chemical Products Platform",
     description: "Conectamos barcos con proveedores certificados de AUS40 y Soda Cáustica en más de 500 puertos mundiales. Cumplimiento IMO 2020 garantizado.",
     images: [
       {
@@ -75,9 +74,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     site: "@addurea",
-    creator: "@addurea",
-    title: "Addurea - Plataforma Global de Productos Químicos Marinos",
-    description: "Conectamos barcos con proveedores certificados de AUS40 y Soda Cáustica worldwide. ⚓ IMO 2020 compliant",
+    title: "Addurea - Global Marine Chemical Products Platform",
+    description: "We connect ships with certified suppliers of AUS40 and caustic soda worldwide. ⚓ IMO 2020 compliant",
     images: ["/og-image.png"],
   },
   viewport: {
@@ -142,6 +140,21 @@ export default function RootLayout({
   return (
     <html lang="es" className="scroll-smooth">
       <head>
+        {/* Advertencia para navegadores sin soporte theme-color */}
+        <script dangerouslySetInnerHTML={{
+          __html: `
+            (function() {
+              var ua = navigator.userAgent;
+              if (/firefox|opera/i.test(ua)) {
+                var warning = document.createElement('div');
+                warning.style = 'position:fixed;top:0;left:0;width:100%;background:#fbbf24;color:#1e293b;padding:8px;text-align:center;z-index:9999;font-size:14px;font-family:sans-serif;';
+                warning.innerText = 'Nota: El color de la barra superior del navegador no se personaliza en Firefox ni Opera.';
+                document.body.appendChild(warning);
+                setTimeout(function(){ warning.remove(); }, 6000);
+              }
+            })();
+          `
+        }} />
         {/* Preconnect to external domains for performance */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
@@ -149,9 +162,57 @@ export default function RootLayout({
         {/* Additional performance hints */}
         <link rel="dns-prefetch" href="//www.google-analytics.com" />
         <link rel="dns-prefetch" href="//fonts.googleapis.com" />
-        
-        {/* Theme and mobile optimization */}
         <meta name="theme-color" content="#2563eb" />
+        {/* Firefox and Opera workaround for theme color */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                var ua = navigator.userAgent;
+                if (/firefox|opera/i.test(ua)) {
+                  var meta = document.createElement('meta');
+                  meta.name = 'theme-color';
+                  meta.content = '#2563eb';
+                  document.head.appendChild(meta);
+                }
+              })();
+            `
+          }}
+        />
+        {/* Firefox and Opera workaround for theme color */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                var ua = navigator.userAgent;
+                if (/firefox|opera/i.test(ua)) {
+                  var meta = document.createElement('meta');
+                  meta.name = 'theme-color';
+                  meta.content = '#2563eb';
+                  document.head.appendChild(meta);
+                }
+              })();
+            `
+          }}
+        />
+        {/* Firefox and Opera workaround for theme color */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                var ua = navigator.userAgent;
+                if (/firefox|opera/i.test(ua)) {
+                  var meta = document.createElement('meta');
+                  meta.name = 'theme-color';
+                  meta.content = '#2563eb';
+                  document.head.appendChild(meta);
+                }
+              })();
+            `
+          }}
+        />
+        <meta name="msapplication-TileColor" content="#2563eb" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
@@ -165,7 +226,6 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "Organization",
               "name": "Addurea",
-              "legalName": "Addurea Maritime Solutions",
               "description": "Plataforma global para productos químicos marinos - AUS40 y Soda Cáustica",
               "url": "https://addurea.com",
               "logo": {
@@ -202,7 +262,7 @@ export default function RootLayout({
                 "Maritime Logistics",
                 "IMO 2020 Compliance",
                 "Marine Chemical Supply Chain",
-                "Port Operations",
+                "Ship Supply",
                 "Ship Chandling"
               ],
               "serviceArea": {
@@ -276,6 +336,7 @@ export default function RootLayout({
           href="#main-content" 
           className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-blue-600 text-white px-4 py-2 rounded-lg z-50 font-medium transition-all"
         >
+          Skip to main content
           Saltar al contenido principal
         </a>
         
@@ -382,92 +443,31 @@ export default function RootLayout({
         />
         
         {/* Fallback for users without JavaScript */}
-        <noscript>
-          <div style={{
-            position: 'fixed',
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
-            backgroundColor: '#f9fafb',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            padding: '20px',
-            fontFamily: 'Inter, system-ui, sans-serif',
-            zIndex: 9999
-          }}>
-            <div style={{
-              maxWidth: '480px',
-              textAlign: 'center',
-              backgroundColor: 'white',
-              padding: '2.5rem',
-              borderRadius: '16px',
-              boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
-              border: '1px solid #e5e7eb'
-            }}>
-              <div style={{
-                width: '64px',
-                height: '64px',
-                background: 'linear-gradient(135deg, #2563eb 0%, #06b6d4 100%)',
-                borderRadius: '12px',
-                margin: '0 auto 1.5rem',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                fontSize: '2rem'
-              }}>
+          <div className="noscript-overlay">
+            <div className="noscript-container">
+              <div className="noscript-icon">
                 🚢
               </div>
-              <h1 style={{ 
-                color: '#111827', 
-                marginBottom: '1rem',
-                fontSize: '1.5rem',
-                fontWeight: '700'
-              }}>
+              <h1 className="noscript-title">
                 Addurea Platform
               </h1>
-              <p style={{ 
-                color: '#6b7280', 
-                marginBottom: '1.5rem',
-                lineHeight: '1.6'
-              }}>
-                Para acceder a la plataforma de productos químicos marinos, necesitas habilitar JavaScript en tu navegador.
+              <p className="noscript-desc">
+                To access the marine chemical products platform, please enable JavaScript in your browser.
               </p>
-              <div style={{
-                backgroundColor: '#eff6ff',
-                padding: '1rem',
-                borderRadius: '8px',
-                marginBottom: '1rem'
-              }}>
-                <p style={{ 
-                  color: '#1e40af', 
-                  fontSize: '0.875rem',
-                  margin: 0,
-                  fontWeight: '500'
-                }}>
-                  🔧 Instrucciones rápidas:
+              <div className="noscript-instructions">
+                <p className="noscript-instructions-title">
+                  🔧 Quick Instructions:
                 </p>
-                <p style={{ 
-                  color: '#3730a3', 
-                  fontSize: '0.8rem',
-                  margin: '0.5rem 0 0',
-                  lineHeight: '1.4'
-                }}>
-                  Chrome/Edge: Configuración → Privacidad y seguridad → JavaScript<br/>
+                <p className="noscript-instructions-desc">
+                  Chrome/Edge: Settings → Privacy & Security → JavaScript<br/>
                   Firefox: about:config → javascript.enabled → true
                 </p>
               </div>
-              <p style={{ 
-                color: '#9ca3af', 
-                fontSize: '0.8rem',
-                fontStyle: 'italic'
-              }}>
-                Addurea es una plataforma moderna optimizada para operaciones marítimas globales.
+              <p className="noscript-note">
+                Addurea is a modern platform optimized for global maritime operations.
               </p>
             </div>
           </div>
-        </noscript>
       </body>
     </html>
   );
